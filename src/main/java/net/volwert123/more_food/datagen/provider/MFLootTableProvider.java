@@ -3,10 +3,12 @@ package net.volwert123.more_food.datagen.provider;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -33,14 +35,15 @@ public class MFLootTableProvider {
     }
 
     public static class MFBlockLootTables extends BlockLootSubProvider {
-        public MFBlockLootTables() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+        protected MFBlockLootTables(HolderLookup.Provider lookupProvider) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), lookupProvider);
         }
 
         @Override
         protected void generate() {
+            HolderLookup.RegistryLookup<Enchantment> registrylookup = registries.lookupOrThrow(Registries.ENCHANTMENT);
             LootItemCondition.Builder riceConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MFBlocks.RICE_CROP.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MFRiceCropBlock.AGE, 7));
-            add(MFBlocks.RICE_CROP.get(), applyExplosionDecay(MFBlocks.RICE_CROP.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(MFItems.RICE.get()))).withPool(LootPool.lootPool().when(riceConditionBuilder).add(LootItem.lootTableItem(MFItems.RICE.get()).apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.FORTUNE, 0.5714286F, 3))))));
+            add(MFBlocks.RICE_CROP.get(), applyExplosionDecay(MFBlocks.RICE_CROP.get(), LootTable.lootTable().withPool(LootPool.lootPool().add(LootItem.lootTableItem(MFItems.RICE.get()))).withPool(LootPool.lootPool().when(riceConditionBuilder).add(LootItem.lootTableItem(MFItems.RICE.get()).apply(ApplyBonusCount.addBonusBinomialDistributionCount(registrylookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3))))));
         }
 
         @Override

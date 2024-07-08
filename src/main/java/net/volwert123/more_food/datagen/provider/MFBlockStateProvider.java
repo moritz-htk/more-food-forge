@@ -30,7 +30,7 @@ public class MFBlockStateProvider extends BlockStateProvider {
 
     private ConfiguredModel[] cropStates(BlockState state) {
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop("rice_crop_stage" + state.getValue(MFRiceCropBlock.AGE), new ResourceLocation(MoreFood.MOD_ID, "block/rice_crop_stage" + state.getValue(MFRiceCropBlock.AGE))).renderType("cutout"));
+        models[0] = new ConfiguredModel(models().crop("rice_crop_stage" + state.getValue(MFRiceCropBlock.AGE), ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, "block/rice_crop_stage" + state.getValue(MFRiceCropBlock.AGE))).renderType("cutout"));
         return models;
     }
 }

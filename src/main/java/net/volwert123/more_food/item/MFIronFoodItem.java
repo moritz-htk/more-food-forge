@@ -7,14 +7,18 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class MFIronFoodItem extends Item {
-    public MFIronFoodItem(Properties properties) {
-        super(properties);
+    private final FoodProperties foodProperties;
+
+    public MFIronFoodItem(Properties properties, FoodProperties foodProperties) {
+        super(properties.food(foodProperties));
+        this.foodProperties = foodProperties;
     }
 
     @Override
@@ -27,7 +31,7 @@ public class MFIronFoodItem extends Item {
         if (level.isClientSide) user.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600));
         if (player != null) {
             player.awardStat(Stats.ITEM_USED.get(this));
-            player.getFoodData().eat(stack);
+            player.getFoodData().eat(foodProperties);
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }
