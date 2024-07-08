@@ -25,7 +25,7 @@ public class MFGlobalLootModifierProvider extends GlobalLootModifierProvider {
     }
 
     @Override
-    protected void start() {
+    protected void start(HolderLookup.Provider provider) {
         addBlockLoot("rice_grass", MFItems.RICE.get(), Blocks.SHORT_GRASS);
         addBlockLoot("rice_fern", MFItems.RICE.get(), Blocks.FERN);
     }

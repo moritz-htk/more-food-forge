@@ -184,9 +184,9 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     private static void createCookingRecipes(ItemLike output, ItemLike input, RecipeOutput recipeOutput) {
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,200, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, new ResourceLocation(MoreFood.MOD_ID, getItemName(output) + "_smelting"));
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,100, RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, new ResourceLocation(MoreFood.MOD_ID, getItemName(output) + "_smoking"));
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,600, RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, new ResourceLocation(MoreFood.MOD_ID, getItemName(output) + "_campfire_cooking"));
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,200, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, getItemName(output) + "_smelting"));
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,100, RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, getItemName(output) + "_smoking"));
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(input), RecipeCategory.FOOD, output,1.0f,600, RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new).unlockedBy(getHasName(input), has(input)).save(recipeOutput, ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, getItemName(output) + "_campfire_cooking"));
     }
 
     private static ShapelessRecipeBuilder createPiecesRecipe(ItemLike output, ItemLike input) {
@@ -304,6 +304,6 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     private static ResourceLocation createOutputLocation(ItemLike item) {
-        return new ResourceLocation(MoreFood.MOD_ID, getItemName(item));
+        return ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, getItemName(item));
     }
 }

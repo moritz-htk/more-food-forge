@@ -79,7 +79,7 @@ public class MFTagsProvider {
         }
 
         private static TagKey<Item> registerKey(String path) {
-            return TagKey.create(Registries.ITEM, new ResourceLocation("forge", path));
+            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("forge", path));
         }
     }
 
