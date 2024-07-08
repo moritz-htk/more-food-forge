@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "#forge:foods/vegetables/carrots",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/vegetables/kelps",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/vegetables/potatoes",
+      "required": false
+    },
+    {
+      "id": "#forge:foods/vegetables/melon_slices",
+      "required": false
+    }
+  ]
+}
