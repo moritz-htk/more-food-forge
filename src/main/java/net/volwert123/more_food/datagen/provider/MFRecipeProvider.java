@@ -30,6 +30,7 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
         createSoupRecipe(MFItems.CARROT_SOUP.get(), Items.CARROT, MFItems.CARROT_PIECES.get()).save(output, createOutputLocation(MFItems.CARROT_SOUP.get()));
         createBreadRecipe(MFItems.CARROT_BREAD.get(), Items.CARROT, MFItems.CARROT_PIECES.get()).save(output, createOutputLocation(MFItems.CARROT_BREAD.get()));
         createPieRecipe(MFItems.CARROT_PIE.get(), Items.CARROT).save(output, createOutputLocation(MFItems.CARROT_PIE.get()));
+        createChocolateFoodRecipe(MFItems.CHOCOLATE.get(),Items.CARROT).save(output,createOutputLocation(MFItems.CHOCOLATE_CARROT.get()));
 
         // Apple Recipes
         createIronFoodRecipe(MFItems.IRON_APPLE.get(), Items.APPLE).save(output, createOutputLocation(MFItems.IRON_APPLE.get()));
@@ -40,6 +41,7 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
         createSoupRecipe(MFItems.APPLE_SOUP.get(), Items.APPLE, MFItems.APPLE_PIECES.get()).save(output, createOutputLocation(MFItems.APPLE_SOUP.get()));
         createBreadRecipe(MFItems.APPLE_BREAD.get(), Items.APPLE, MFItems.APPLE_PIECES.get()).save(output, createOutputLocation(MFItems.APPLE_BREAD.get()));
         createPieRecipe(MFItems.APPLE_PIE.get(), Items.APPLE).save(output, createOutputLocation(MFItems.APPLE_PIE.get()));
+        createChocolateFoodRecipe(MFItems.CHOCOLATE.get(),Items.APPLE).save(output,createOutputLocation(MFItems.CHOCOLATE_APPLE.get()));
 
         // Kelp Recipes
         createIronFoodRecipe(MFItems.IRON_KELP.get(), Items.DRIED_KELP).save(output, createOutputLocation(MFItems.IRON_KELP.get()));
@@ -48,6 +50,7 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
         createEmeraldFoodRecipe(MFItems.EMERALD_KELP.get(), Items.DRIED_KELP).save(output, createOutputLocation(MFItems.EMERALD_KELP.get()));
         createPiecesRecipe(MFItems.KELP_PIECES.get(), Items.DRIED_KELP).save(output, createOutputLocation(MFItems.KELP_PIECES.get()));
         createSoupRecipe(MFItems.KELP_SOUP.get(), Items.DRIED_KELP, MFItems.KELP_PIECES.get()).save(output, createOutputLocation(MFItems.KELP_SOUP.get()));
+        createChocolateFoodRecipe(MFItems.CHOCOLATE.get(),Items.DRIED_KELP).save(output,createOutputLocation(MFItems.CHOCOLATE_DRIED_KELP.get()));
 
         // Potato Recipes
         createIronFoodRecipe(MFItems.IRON_POTATO.get(), Items.POTATO).save(output, createOutputLocation(MFItems.IRON_POTATO.get()));
@@ -137,6 +140,10 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
         // Chocolate Recipes
         createChocolateRecipe().save(output, createOutputLocation(MFItems.CHOCOLATE.get()));
         createChocolateBarRecipe().save(output, createOutputLocation(MFItems.CHOCOLATE_BAR.get()));
+
+        // Sweet Berries
+        createChocolateFoodRecipe(MFItems.CHOCOLATE.get(),Items.SWEET_BERRIES).save(output,createOutputLocation(MFItems.CHOCOLATE_SWEET_BERRIES.get()));
+
     }
 
     private static ShapedRecipeBuilder createIronFoodRecipe(ItemLike output, ItemLike input) {
@@ -273,6 +280,16 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy(getHasName(input), has(input));
     }
 
+    private static ShapedRecipeBuilder createChocolateFoodRecipe(ItemLike output, ItemLike input) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, output)
+                .define('C', MFItems.CHOCOLATE.get())
+                .define('#', input)
+                .pattern(" # ")
+                .pattern(" C ")
+                .unlockedBy(getHasName(MFItems.CHOCOLATE.get()), has(MFItems.CHOCOLATE.get()))
+                .unlockedBy(getHasName(input), has(input));
+    }
+
     private static ShapelessRecipeBuilder createRawBaconRecipe() {
         return ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MFItems.RAW_BACON.get())
                 .requires(Items.PORKCHOP)
@@ -302,6 +319,7 @@ public class MFRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
                 .unlockedBy(getHasName(MFItems.CHOCOLATE.get()), has(MFItems.CHOCOLATE.get()));
     }
+
 
     private static ResourceLocation createOutputLocation(ItemLike item) {
         return ResourceLocation.fromNamespaceAndPath(MoreFood.MOD_ID, getItemName(item));

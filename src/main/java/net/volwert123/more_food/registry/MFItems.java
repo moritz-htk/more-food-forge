@@ -21,6 +21,7 @@ public class MFItems {
     public static final RegistryObject<Item> CARROT_SOUP = ITEMS.register("carrot_soup", () -> new MFSoupItem(new Item.Properties(), registerFoodValues(6, 3f)));
     public static final RegistryObject<Item> CARROT_BREAD = ITEMS.register("carrot_bread", () -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
     public static final RegistryObject<Item> CARROT_PIE = ITEMS.register("carrot_pie", () -> new Item(new Item.Properties().food(registerFoodValues(10, 5f))));
+    public static final RegistryObject<Item> CHOCOLATE_CARROT = ITEMS.register("chocolate_carrot",() -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
 
     // Apple Items
     public static final RegistryObject<Item> IRON_APPLE = ITEMS.register("iron_apple", () -> new MFIronFoodItem(new Item.Properties(), registerFoodValues(4, 2f)));
@@ -31,6 +32,7 @@ public class MFItems {
     public static final RegistryObject<Item> APPLE_SOUP = ITEMS.register("apple_soup", () -> new MFSoupItem(new Item.Properties(), registerFoodValues(6, 3f)));
     public static final RegistryObject<Item> APPLE_BREAD = ITEMS.register("apple_bread", () -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
     public static final RegistryObject<Item> APPLE_PIE = ITEMS.register("apple_pie", () -> new Item(new Item.Properties().food(registerFoodValues(10, 5f))));
+    public static final RegistryObject<Item> CHOCOLATE_APPLE = ITEMS.register("chocolate_apple",() -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
 
     // Kelp Items
     public static final RegistryObject<Item> IRON_KELP = ITEMS.register("iron_kelp", () -> new MFIronFoodItem(new Item.Properties(), registerFoodValues(5, 2.5f)));
@@ -39,6 +41,7 @@ public class MFItems {
     public static final RegistryObject<Item> EMERALD_KELP = ITEMS.register("emerald_kelp", () -> new MFEmeraldFoodItem(new Item.Properties(), registerFoodValues(5, 2.5f)));
     public static final RegistryObject<Item> KELP_PIECES = ITEMS.register("kelp_pieces", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> KELP_SOUP = ITEMS.register("kelp_soup", () -> new MFSoupItem(new Item.Properties(), registerFoodValues(6, 3f)));
+    public static final RegistryObject<Item> CHOCOLATE_DRIED_KELP = ITEMS.register("chocolate_dried_kelp",() -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
 
     // Potato Items
     public static final RegistryObject<Item> IRON_POTATO = ITEMS.register("iron_potato", () -> new MFIronFoodItem(new Item.Properties(), registerFoodValues(5, 2.5f)));
@@ -129,6 +132,10 @@ public class MFItems {
     // Chocolate Items
     public static final RegistryObject<Item> CHOCOLATE = ITEMS.register("chocolate", () -> new Item(new Item.Properties().food(registerFoodValues(6,3f))));
     public static final RegistryObject<Item> CHOCOLATE_BAR = ITEMS.register("chocolate_bar", () -> new Item(new Item.Properties().food(registerFoodValues(8,4f))));
+
+    // Sweet Berries
+    public static final RegistryObject<Item> CHOCOLATE_SWEET_BERRIES = ITEMS.register("chocolate_sweet_berries",() -> new Item(new Item.Properties().food(registerFoodValues(6, 3f))));
+
 
     public static FoodProperties registerFoodValues(int nutrition, float saturation) {
         return new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build();

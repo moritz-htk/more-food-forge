@@ -21,6 +21,7 @@ public class MFGermanLanguageProvider extends LanguageProvider {
         add(MFItems.CARROT_SOUP.get(), "Karottensuppe");
         add(MFItems.CARROT_BREAD.get(), "Karottenbrot");
         add(MFItems.CARROT_PIE.get(), "Karottenkuchen");
+        add(MFItems.CHOCOLATE_CARROT.get(),"Schokoladen Karotte");
 
         // Apple Items
         add(MFItems.IRON_APPLE.get(), "Eisenapfel");
@@ -31,6 +32,7 @@ public class MFGermanLanguageProvider extends LanguageProvider {
         add(MFItems.APPLE_SOUP.get(), "Apfelsuppe");
         add(MFItems.APPLE_BREAD.get(), "Apfelbrot");
         add(MFItems.APPLE_PIE.get(), "Apfelkuchen");
+        add(MFItems.CHOCOLATE_APPLE.get(),"Schokoladen Apfel");
 
         // Kelp Items
         add(MFItems.IRON_KELP.get(), "Eisenseetang");
@@ -39,6 +41,7 @@ public class MFGermanLanguageProvider extends LanguageProvider {
         add(MFItems.EMERALD_KELP.get(), "Smaragdseetang");
         add(MFItems.KELP_PIECES.get(), "Seetangstücke");
         add(MFItems.KELP_SOUP.get(), "Seetangsuppe");
+        add(MFItems.CHOCOLATE_DRIED_KELP.get(),"getrockneter Seetang mit Schokolade");
 
         // Potato Items
         add(MFItems.IRON_POTATO.get(), "Eisenkartoffel");
@@ -129,5 +132,8 @@ public class MFGermanLanguageProvider extends LanguageProvider {
         // Chocolate Items
         add(MFItems.CHOCOLATE.get(), "Schokolade");
         add(MFItems.CHOCOLATE_BAR.get(), "Schokoladentafel");
+
+        // Sweet Berries
+        add(MFItems.CHOCOLATE_SWEET_BERRIES.get(),"süße Berren mit Schokolade");
     }
 }
