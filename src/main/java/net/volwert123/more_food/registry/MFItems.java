@@ -60,6 +60,7 @@ public class MFItems {
     // Pufferfish Items
     public static final RegistryObject<Item> PUFFERFISH_PIECES = ITEMS.register("pufferfish_pieces", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PUFFERFISH_SOUP = ITEMS.register("pufferfish_soup", () -> new MFPufferfishSoupItem(new Item.Properties(), registerFoodValues(6, 3f)));
+    public static final RegistryObject<Item> COOKED_PUFFERFISH = ITEMS.register("cooked_pufferfish",() -> new Item(new Item.Properties().food(registerFoodValues(5, 2.5f))));
 
     // Pumpkin Items
     public static final RegistryObject<Item> PUMPKING_SOUP = ITEMS.register("pumpking_soup", () -> new MFSoupItem(new Item.Properties(), registerFoodValues(6, 3f)));

@@ -60,6 +60,7 @@ public class MFRussianLanguageProvider extends LanguageProvider {
         // Pufferfish Items
         add(MFItems.PUFFERFISH_PIECES.get(), "Кусочки иглобрюха");
         add(MFItems.PUFFERFISH_SOUP.get(), "Иглобрюховый суп");
+        add(MFItems.COOKED_PUFFERFISH.get(),"Приготовленная рыба иглобрюх");
 
         // Pumpkin Items
         add(MFItems.PUMPKING_SOUP.get(), "Тыквенный суп");

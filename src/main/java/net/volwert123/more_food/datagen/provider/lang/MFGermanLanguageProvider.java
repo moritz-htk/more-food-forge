@@ -60,6 +60,7 @@ public class MFGermanLanguageProvider extends LanguageProvider {
         // Pufferfish Items
         add(MFItems.PUFFERFISH_PIECES.get(), "Kugelfischstücke");
         add(MFItems.PUFFERFISH_SOUP.get(), "Kugelfischsuppe");
+        add(MFItems.COOKED_PUFFERFISH.get(),"Gebratener Kugelfisch");
 
         // Pumpkin Items
         add(MFItems.PUMPKING_SOUP.get(), "Kürbissuppe");

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "minecraft:pufferfish"
+  },
+  "result": {
+    "id": "more_food:cooked_pufferfish"
+  }
+}

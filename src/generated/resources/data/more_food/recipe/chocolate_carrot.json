@@ -1,20 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
       "item": "minecraft:carrot"
     },
-    "C": {
+    {
       "item": "more_food:chocolate"
     }
-  },
-  "pattern": [
-    " # ",
-    " C "
   ],
   "result": {
     "count": 1,
-    "id": "more_food:chocolate"
+    "id": "more_food:chocolate_carrot"
   }
 }
