@@ -32,7 +32,7 @@ public class MFRussianLanguageProvider extends LanguageProvider {
         add(MFItems.APPLE_SOUP.get(), "Яблочный суп");
         add(MFItems.APPLE_BREAD.get(), "Яблочный хлеб");
         add(MFItems.APPLE_PIE.get(), "Яблочный пирог");
-        add(MFItems.CHOCOLATE_CARROT.get(),"Шоколадное яблоко");
+        add(MFItems.CHOCOLATE_APPLE.get(),"Шоколадное яблоко");
 
         // Kelp Items
         add(MFItems.IRON_KELP.get(), "Железный ламинария");
